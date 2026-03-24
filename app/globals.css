@@ -1,3 +1,9 @@
+:root {
+    --color-primary: #1A1A2E;
+    --color-secondary: #4A6FA5;
+    --color-accent: #E8C547;
+}
+
 *,
 *::before,
 *::after {
@@ -6,20 +12,22 @@
     padding: 0;
 }
 
-:root {
-    --blue: #308FFF;
-    --green: #54c98f;
-    --orange: #ffae31;
-    --navyBlue: #33179c;
-    --red: #ff4d63;
-    --gold: #A7823B;
-    --grey: #d8d8d8;
-}
-
 html,
 body {
     height: 100%;
     font-family: var(--font-madani), sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

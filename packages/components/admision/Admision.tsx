@@ -1,4 +1,6 @@
-import { Footer, RegisterForm, Hero } from "@/packages/shared/common";
+import { RegisterForm } from "@/packages/shared/common";
+
+import Hero from "./Hero";
 
 export default function Admision() {
     return (
@@ -31,7 +33,6 @@ export default function Admision() {
                     <RegisterForm />
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

@@ -1,0 +1,1 @@
+export { getCurp } from './getCurp';

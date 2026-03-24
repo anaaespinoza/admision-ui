@@ -1,19 +1,28 @@
-import { Box, Container, Typography } from "@mui/material";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
+import { AppBar, Box, Container, Toolbar } from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function ButtonAppBar() {
+import NavbarLoginFields from "./NavbarLoginFields";
+
+export default function Navbar() {
   return (
-    <Box>
-      <AppBar position="fixed" color="primary">
-        <Container maxWidth="xl" disableGutters sx={{ px: 3 }}>
-          <Toolbar disableGutters>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              LOGO
-            </Typography>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </Box>
+    <AppBar position="fixed" sx={{ backgroundColor: "#373A3A" }}>
+      <Container maxWidth="xl" disableGutters sx={{ px: 3 }}>
+        <Toolbar disableGutters sx={{ gap: 2, minHeight: "72px", alignItems: "center" }}>
+          <Box sx={{ flexGrow: 1 }}>
+            <Link href="/">
+              <Image
+                src="/assets/logos/tsjBco.png"
+                alt="TSJ Logo"
+                height={80}
+                width={140}
+                style={{ objectFit: "contain", cursor: "pointer", display: "block" }}
+              />
+            </Link>
+          </Box>
+          <NavbarLoginFields />
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }

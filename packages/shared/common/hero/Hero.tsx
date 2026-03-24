@@ -1,73 +1,93 @@
 "use client";
+import { Box, Typography, Container, Button, Chip } from "@mui/material";
+import Image from "next/image";
 
-interface HeroProps {
-    title?: string;
-    subtitle?: string;
-    backgroundImage?: string;
-}
+import type { HeroProps } from "../types/Hero";
 
 export default function Hero({
-    title = "Aquí comienza tu futuro profesional.",
-    subtitle = "Únete a nuestra comunidad.\nDa el primer paso hacia el éxito.",
-    backgroundImage = "/assets/hero-bg.jpg",
+  title,
+  subtitle,
+  image,
+  chipLabel,
+  buttonText,
+  buttonHref,
+  overlay = true,
 }: HeroProps) {
-    return (
-        <div
-            style={{
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                position: "absolute",
-                inset: 0,
-                zIndex: 0,
-            }}
-        >
-            <div
-                style={{
-                    position: "absolute",
-                    inset: 0,
-                    background: "rgba(0,0,0,0.35)",
-                    zIndex: 1,
-                }}
+  return (
+    <Box sx={{ position: "relative", width: "100%" }}>
+      <Image
+        src={image}
+        alt="Hero image"
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{
+          width: "100%",
+          height: "90vh",
+          objectFit: "cover",
+        }}
+      />
+
+      {overlay && (
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4))",
+          }}
+        />
+      )}
+
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          alignItems: "center",
+          color: "white",
+        }}
+      >
+        <Container maxWidth="xl" disableGutters sx={{ px: 3 }}>
+          {chipLabel && (
+            <Chip
+              label={chipLabel}
+              sx={{
+                mb: 2,
+                backgroundColor: "rgba(255,255,255,0.9)",
+                color: "black",
+                fontWeight: 500,
+              }}
             />
-            <div
-                style={{
-                    position: "relative",
-                    zIndex: 2,
-                    maxWidth: "460px",
-                    padding: "0 2.5rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end",
-                    height: "100%",
-                    paddingBottom: "4rem",
-                }}
+          )}
+
+          <Typography variant="h2" fontWeight="bold" mb={2}>
+            {title}
+          </Typography>
+
+          {subtitle && (
+            <Typography variant="body1" mb={4} sx={{ maxWidth: 500 }}>
+              {subtitle}
+            </Typography>
+          )}
+
+          {buttonText && (
+            <Button
+              variant="contained"
+              size="large"
+              href={buttonHref}
+              sx={{
+                backgroundColor: "white",
+                color: "black",
+                width: "fit-content",
+                "&:hover": { backgroundColor: "grey.200" },
+              }}
             >
-                <h1
-                    style={{
-                        color: "#fff",
-                        fontSize: "2.6rem",
-                        lineHeight: 1.15,
-                        marginBottom: "1rem",
-                        fontFamily: "var(--font-madani-bold)",
-                    }}
-                >
-                    {title}
-                </h1>
-                <p
-                    style={{
-                        color: "rgba(255,255,255,0.88)",
-                        fontSize: "1.05rem",
-                        lineHeight: 1.6,
-                        whiteSpace: "pre-line",
-                        fontStyle: "italic",
-                        fontFamily: "var(--font-madani-light)",
-                    }}
-                >
-                    {subtitle}
-                </p>
-            </div>
-        </div>
-    );
+              {buttonText}
+            </Button>
+          )}
+        </Container>
+      </Box>
+    </Box>
+  );
 }

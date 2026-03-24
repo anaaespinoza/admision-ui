@@ -1,33 +1,37 @@
 :root {
-    --color-primary: #1A1A2E;
-    --color-secondary: #4A6FA5;
-    --color-accent: #E8C547;
+  --blue: #308fff;
+  --green: #54c98f;
+  --orange: #ffae31;
+  --navyBlue: #33179c;
+  --red: #ff4d63;
+  --gold: #a7823b;
+  --grey: #d8d8d8;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-    height: 100%;
-    font-family: var(--font-madani), sans-serif;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
+  height: 100%;
+  font-family: var(--font-madani), sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
 @keyframes fadeSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-6px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

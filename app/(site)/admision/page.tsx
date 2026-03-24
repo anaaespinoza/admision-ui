@@ -1,4 +1,4 @@
-import Admision from "@/packages/components/admision/Admision";
+import { Admision } from "@/packages/components";
 
 export default function AdmisionPage() {
   return <Admision />;

@@ -1,8 +1,9 @@
 "use client";
-
-import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
-import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import {
+  ArrowBackIosNewOutlined,
+  FileDownloadOutlined,
+  LocationOnOutlined,
+} from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -41,7 +42,6 @@ export default function CarreraCard({
         boxShadow: 3,
         borderRadius: 5,
         width: "100%",
-        maxWidth: 408,
         minHeight: 368,
         position: "relative",
         backgroundImage: `url(${image})`,
@@ -49,7 +49,6 @@ export default function CarreraCard({
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay */}
       <Box
         sx={{
           position: "absolute",
@@ -75,7 +74,6 @@ export default function CarreraCard({
       >
         {!showUnidades ? (
           <>
-            {/* Chips */}
             <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
               <Chip
                 label={modalidad}
@@ -83,13 +81,13 @@ export default function CarreraCard({
                 sx={
                   modalidad === "En línea"
                     ? {
-                        backgroundColor: "#BBD8C8",
+                        backgroundColor: "var(--green)",
                         color: "#fff",
                         fontWeight: "bold",
                         border: "none",
                       }
                     : {
-                        backgroundColor: "#FFA1A3",
+                        backgroundColor: "var(--red)",
                         color: "#fff",
                         fontWeight: "bold",
                         border: "none",
@@ -101,7 +99,7 @@ export default function CarreraCard({
                   label={turno}
                   size="small"
                   sx={{
-                    backgroundColor: "#FFCA95",
+                    backgroundColor: "var(--orange)",
                     color: "#fff",
                     fontWeight: "bold",
                     border: "none",
@@ -110,7 +108,6 @@ export default function CarreraCard({
               )}
             </Box>
 
-            {/* Contenido inferior */}
             <Box>
               <Typography
                 variant="h6"
@@ -139,7 +136,7 @@ export default function CarreraCard({
                 <Button
                   size="small"
                   variant="outlined"
-                  startIcon={<LocationOnOutlinedIcon fontSize="small" />}
+                  startIcon={<LocationOnOutlined fontSize="small" />}
                   onClick={() => setShowUnidades(true)}
                   sx={{
                     mb: 2,
@@ -159,10 +156,7 @@ export default function CarreraCard({
               )}
 
               <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                <FileDownloadOutlinedIcon
-                  fontSize="small"
-                  sx={{ color: "#fff" }}
-                />
+                <FileDownloadOutlined fontSize="small" sx={{ color: "#fff" }} />
                 <Typography
                   variant="body2"
                   sx={{
@@ -205,7 +199,7 @@ export default function CarreraCard({
                   "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
                 }}
               >
-                <ArrowBackIosNewOutlinedIcon sx={{ fontSize: 16 }} />
+                <ArrowBackIosNewOutlined sx={{ fontSize: 16 }} />
               </Button>
             </Box>
 
@@ -240,7 +234,7 @@ export default function CarreraCard({
                     transition: "background 0.2s ease",
                   }}
                 >
-                  <LocationOnOutlinedIcon
+                  <LocationOnOutlined
                     sx={{
                       fontSize: 15,
                       flexShrink: 0,
@@ -267,10 +261,7 @@ export default function CarreraCard({
             />
 
             <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-              <FileDownloadOutlinedIcon
-                fontSize="small"
-                sx={{ color: "#fff" }}
-              />
+              <FileDownloadOutlined fontSize="small" sx={{ color: "#fff" }} />
               <Typography
                 variant="body2"
                 sx={{ cursor: "pointer", fontWeight: "bold", color: "#fff" }}

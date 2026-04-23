@@ -30,8 +30,8 @@ export default function CategoryTabs({ activeTab, onChange }: Props) {
         sx={{
           display: "flex",
           alignItems: "center",
-          gap: 4,
-          px: 2,
+          gap: { xs: 0.5, md: 4 },
+          px: { xs: 1, md: 2 },
           py: 1.5,
           borderRadius: "999px",
           backgroundColor: "#ffffff",
@@ -40,13 +40,12 @@ export default function CategoryTabs({ activeTab, onChange }: Props) {
       >
         {tabs.map((tab) => {
           const isActive = activeTab === tab;
-
           return (
             <Box
               key={tab}
               onClick={() => onChange(tab)}
               sx={{
-                px: 4,
+                px: { xs: 1.5, md: 4 },
                 py: 1.2,
                 borderRadius: "999px",
                 cursor: "pointer",
@@ -57,8 +56,9 @@ export default function CategoryTabs({ activeTab, onChange }: Props) {
               <Typography
                 sx={{
                   fontWeight: 600,
-                  fontSize: "1rem",
+                  fontSize: { xs: "0.8rem", md: "1rem" },
                   color: isActive ? "#fff" : "#5b6573",
+                  whiteSpace: "nowrap",
                 }}
               >
                 {tab}

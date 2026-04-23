@@ -16,10 +16,18 @@ export type QuestionComponent =
       type: "text";
       label?: string;
       placeholder?: string;
+    }
+  | {
+      id: string;
+      type: "radio";
+      label?: string;
+      options: Option[];
     };
 export type Question = {
   id: string;
   title: string;
   components: QuestionComponent[];
   icon?: React.ReactNode;
+  indicatorColor?: string;
+  iconColor?: string;
 };

@@ -12,9 +12,18 @@ export default function Hero({
   buttonText,
   buttonHref,
   overlay = true,
+  icon,
+  //fullWidth = true,
 }: HeroProps) {
   return (
-    <Box sx={{ position: "relative", width: "100%" }}>
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        borderRadius: 3,
+        overflow: "hidden",
+      }}
+    >
       <Image
         src={image}
         alt="Hero image"
@@ -48,44 +57,69 @@ export default function Hero({
           color: "white",
         }}
       >
-        <Container maxWidth="xl" disableGutters sx={{ px: 3 }}>
-          {chipLabel && (
-            <Chip
-              label={chipLabel}
-              sx={{
-                mb: 2,
-                backgroundColor: "rgba(255,255,255,0.9)",
-                color: "black",
-                fontWeight: 500,
-              }}
-            />
-          )}
+        <Container maxWidth="xl" disableGutters sx={{ px: 6 }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 4,
+            }}
+          >
+            <Box sx={{ flex: 1 }}>
+              {chipLabel && (
+                <Chip
+                  label={chipLabel}
+                  sx={{
+                    mb: 2,
+                    backgroundColor: "rgba(255,255,255,0.9)",
+                    color: "black",
+                    fontWeight: 500,
+                  }}
+                />
+              )}
 
-          <Typography variant="h2" fontWeight="bold" mb={2}>
-            {title}
-          </Typography>
+              <Typography variant="h2" fontWeight="bold" mb={2}>
+                {title}
+              </Typography>
 
-          {subtitle && (
-            <Typography variant="body1" mb={4} sx={{ maxWidth: 500 }}>
-              {subtitle}
-            </Typography>
-          )}
+              {subtitle && (
+                <Typography variant="body1" mb={4} sx={{ maxWidth: 500 }}>
+                  {subtitle}
+                </Typography>
+              )}
 
-          {buttonText && (
-            <Button
-              variant="contained"
-              size="large"
-              href={buttonHref}
-              sx={{
-                backgroundColor: "white",
-                color: "black",
-                width: "fit-content",
-                "&:hover": { backgroundColor: "grey.200" },
-              }}
-            >
-              {buttonText}
-            </Button>
-          )}
+              {buttonText && (
+                <Button
+                  variant="contained"
+                  size="large"
+                  href={buttonHref}
+                  sx={{
+                    backgroundColor: "white",
+                    color: "black",
+                    width: "fit-content",
+                    "&:hover": { backgroundColor: "grey.200" },
+                  }}
+                >
+                  {buttonText}
+                </Button>
+              )}
+            </Box>
+
+            {icon && (
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                  opacity: 0.9,
+                }}
+              >
+                {icon}
+              </Box>
+            )}
+          </Box>
         </Container>
       </Box>
     </Box>

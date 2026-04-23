@@ -4,6 +4,7 @@ import ContactoSection from "@/packages/components/home/contactossection/Contact
 import ConvocatoriaSection from "@/packages/components/home/convocatoriassection/Convocatoriassection";
 import OfertaEducativaSection from "@/packages/components/home/ofertaeducativa/Ofertaeducativasection";
 import PreguntasCard from "@/packages/components/home/preguntascard/preguntascard";
+import { Footer } from "@/packages/shared/common";
 import Hero from "@/packages/shared/common/hero/Hero";
 
 export default function Page() {
@@ -17,12 +18,13 @@ export default function Page() {
         buttonText="Registrarse como Aspirante"
         buttonHref="/admision"
       />
-      <Container maxWidth="xl" disableGutters sx={{ px: 3 }}>
+      <Container maxWidth="xl" sx={{ px: { xs: 2, md: 6 } }}>
         <ConvocatoriaSection />
         <PreguntasCard />
         <OfertaEducativaSection />
         <ContactoSection />
       </Container>
+      <Footer />
     </div>
   );
 }

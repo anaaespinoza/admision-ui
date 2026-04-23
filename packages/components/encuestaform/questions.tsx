@@ -17,6 +17,7 @@ export const questions: Question[] = [
   {
     id: "1",
     title: "¿País, estado y municipio de procedencia?",
+    iconColor: "var(--blue)",
     icon: <MapOutlined sx={{ color: "var(--blue)" }} />,
     components: [
       {
@@ -33,6 +34,7 @@ export const questions: Question[] = [
         options: [
           { label: "Jalisco", value: "jalisco" },
           { label: "Nuevo León", value: "nuevo_leon" },
+          { label: "Quintana Roo", value: "quintana_roo" },
         ],
       },
       {
@@ -49,6 +51,7 @@ export const questions: Question[] = [
   {
     id: "2",
     title: "¿Bachillerato de procedencia?",
+    iconColor: "var(--green)",
     icon: <HistoryEdu sx={{ color: "var(--green)" }} />,
     components: [
       {
@@ -58,7 +61,7 @@ export const questions: Question[] = [
           { label: "COBAEJ", value: "cobaej" },
           { label: "CETis", value: "cetis" },
           { label: "UDG", value: "udg" },
-          { label: "Privada", value: "privada" },
+          { label: "Cesitej", value: "cesitej" },
           { label: "Otro", value: "otro" },
         ],
         allowOther: true,
@@ -68,6 +71,7 @@ export const questions: Question[] = [
   {
     id: "3",
     title: "¿Cuál fue tu primera opción de estudios?",
+    iconColor: "var(--orange)",
     icon: <StarRate sx={{ color: "var(--orange)" }} />,
     components: [
       {
@@ -85,14 +89,18 @@ export const questions: Question[] = [
   {
     id: "4",
     title: "¿Cómo conociste al TSJ?",
-    icon: <CampaignOutlined sx={{ color: "var(--navyblue)" }} />,
+    iconColor: "var(--navyBlue)",
+    icon: <CampaignOutlined sx={{ color: "var(--navyBlue)" }} />,
     components: [
       {
         type: "select",
         id: "conocimiento",
         options: [
           { label: "Visita a tu bachillerato", value: "visita" },
-          { label: "Recomendación", value: "recomendacion" },
+          {
+            label: "Recomendación de una persona o familiar",
+            value: "recomendacion",
+          },
           { label: "Televisión", value: "tv" },
           { label: "Radio", value: "radio" },
           { label: "Redes sociales", value: "social" },
@@ -108,6 +116,7 @@ export const questions: Question[] = [
   {
     id: "5",
     title: "¿Factor más importante para elegir TSJ?",
+    iconColor: "var(--red)",
     icon: <EmojiObjectsOutlined sx={{ color: "var(--red)" }} />,
     components: [
       {
@@ -115,18 +124,24 @@ export const questions: Question[] = [
         id: "factor",
         options: [
           { label: "Familiares", value: "familia" },
-          { label: "Amigos", value: "amigos" },
-          { label: "Padres", value: "padres" },
+          { label: "Amigos estudiando aqui", value: "amigos" },
+          { label: "Influencia de mis Padres", value: "padres" },
           { label: "Precio", value: "precio" },
           { label: "Prestigio", value: "prestigio" },
           { label: "Plan de estudios", value: "plan" },
-          { label: "Ambiente", value: "ambiente" },
-          { label: "Cercanía", value: "cercania" },
-          { label: "Instalaciones", value: "instalaciones" },
+          { label: "Ambiente Estudiantil", value: "ambiente" },
+          { label: "Cercanía de mi Domicilio", value: "cercania" },
+          { label: "laboratorios e Instalaciones", value: "instalaciones" },
           { label: "Inserción laboral", value: "laboral" },
-          { label: "Oferta académica", value: "oferta" },
+          {
+            label: "Oferta académica adecuada a mis necesidades",
+            value: "oferta",
+          },
           { label: "Nivel académico", value: "nivel" },
-          { label: "Actividades", value: "actividades" },
+          {
+            label: "Actividades Deportivas y Culturales",
+            value: "actividades",
+          },
           { label: "Otra", value: "otra" },
         ],
         allowOther: true,
@@ -136,6 +151,7 @@ export const questions: Question[] = [
   {
     id: "6",
     title: "¿Cómo te gustaría enterarte de la vida universitaria?",
+    iconColor: "var(--gold)",
     icon: <MoveToInboxOutlined sx={{ color: "var(--gold)" }} />,
     components: [
       {
@@ -154,7 +170,8 @@ export const questions: Question[] = [
   {
     id: "7",
     title: "¿Qué otra carrera te gustaría que se ofertara?",
-    icon: <AddCircleOutlineOutlined sx={{ color: "var(--green)" }} />,
+    iconColor: "var(--blue)",
+    icon: <AddCircleOutlineOutlined sx={{ color: "var(--blue)" }} />,
     components: [
       {
         type: "select",
@@ -169,7 +186,8 @@ export const questions: Question[] = [
   {
     id: "8",
     title: "Si no te hubieras inscrito, ¿a dónde irías y por qué?",
-    icon: <Message sx={{ color: "var(--orange)" }} />,
+    iconColor: "var(--green)",
+    icon: <Message sx={{ color: "var(--green)" }} />,
     components: [
       {
         type: "text",
@@ -181,7 +199,8 @@ export const questions: Question[] = [
   {
     id: "9",
     title: "¿En cual de estos medios digitales pasas más tu tiempo libre?",
-    icon: <Phonelink sx={{ color: "var(--navyblue)" }} />,
+    iconColor: "var(--orange)",
+    icon: <Phonelink sx={{ color: "var(--orange)" }} />,
     components: [
       {
         type: "select",
@@ -199,17 +218,18 @@ export const questions: Question[] = [
   {
     id: "10",
     title: "¿Qué medio frecuentas más?",
-    icon: <Headset sx={{ color: "var(--red)" }} />,
+    iconColor: "var(--navyBlue)",
+    icon: <Headset sx={{ color: "var(--navyBlue)" }} />,
     components: [
       {
         type: "select",
         id: "medio_frecuente",
         options: [
           { label: "Televisión local", value: "tv" },
-          { label: "Fútbol en TV", value: "futbol" },
-          { label: "Deportes", value: "deportes" },
-          { label: "Radio", value: "radio" },
-          { label: "Spotify", value: "spotify" },
+          { label: "Viendo partidos de Fútbol en TV", value: "futbol" },
+          { label: "Realizando Deportes", value: "deportes" },
+          { label: "Escuchando el Radio Local", value: "radio" },
+          { label: "Escuchando Spotify", value: "spotify" },
         ],
       },
     ],

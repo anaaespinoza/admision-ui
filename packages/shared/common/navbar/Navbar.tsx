@@ -7,8 +7,11 @@ import NavbarLoginFields from "./NavbarLoginFields";
 export default function Navbar() {
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "#373A3A" }}>
-      <Container maxWidth="xl" disableGutters sx={{ px: 3 }}>
-        <Toolbar disableGutters sx={{ gap: 2, minHeight: "72px", alignItems: "center" }}>
+      <Container maxWidth="xl" disableGutters sx={{ px: 6 }}>
+        <Toolbar
+          disableGutters
+          sx={{ gap: 2, minHeight: "72px", alignItems: "center" }}
+        >
           <Box sx={{ flexGrow: 1 }}>
             <Link href="/">
               <Image
@@ -16,7 +19,11 @@ export default function Navbar() {
                 alt="TSJ Logo"
                 height={80}
                 width={140}
-                style={{ objectFit: "contain", cursor: "pointer", display: "block" }}
+                style={{
+                  objectFit: "contain",
+                  cursor: "pointer",
+                  display: "block",
+                }}
               />
             </Link>
           </Box>

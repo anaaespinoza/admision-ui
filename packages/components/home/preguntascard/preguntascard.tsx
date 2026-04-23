@@ -1,5 +1,4 @@
-import ContactSupportOutlinedIcon from "@mui/icons-material/ContactSupportOutlined";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { ContactSupportOutlined, ExpandMore } from "@mui/icons-material";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -52,7 +51,7 @@ export default function PreguntasCard({
         mb={4}
         sx={{ display: "flex", alignItems: "center", gap: 1 }}
       >
-        <ContactSupportOutlinedIcon />
+        <ContactSupportOutlined />
         {title}
       </Typography>
 
@@ -68,7 +67,7 @@ export default function PreguntasCard({
                 "&:before": { display: "none" },
               }}
             >
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <AccordionSummary expandIcon={<ExpandMore />}>
                 <Typography variant="subtitle2" fontWeight="bold">
                   {faq.question}
                 </Typography>

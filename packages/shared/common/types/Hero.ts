@@ -9,4 +9,8 @@ export type HeroProps = {
   buttonHref?: string;
 
   overlay?: boolean;
+
+  icon?: React.ReactNode;
+
+  fullWidth?: boolean;
 };
